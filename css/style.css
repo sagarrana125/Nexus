@@ -1,0 +1,153 @@
+/* === INSANELY SIMPLE PRINCIPLES === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fafbfc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1a202c;
+}
+
+.hero {
+    background: #0a192f;
+    padding: 3.5rem 0 2.5rem 0;
+    border-bottom: 3px solid #64ffda;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+}
+
+.hero h1 span { color: #64ffda; }
+
+.hero .tagline {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    font-weight: 300;
+}
+
+.hero .badge-count {
+    background: rgba(100, 255, 218, 0.12);
+    color: #64ffda;
+    padding: 0.3rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(100, 255, 218, 0.15);
+}
+
+.roadmap-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.8rem;
+    display: block;
+    stroke: #0a192f;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover .roadmap-icon {
+    stroke: #64ffda;
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.resource-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.8rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+    height: 100%;
+    cursor: pointer;
+}
+
+.resource-card:hover {
+    transform: translateY(-6px);
+    border-color: #64ffda;
+    box-shadow: 0 16px 32px rgba(10, 25, 47, 0.06);
+}
+
+.resource-card .step-number {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.resource-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0a192f;
+    margin-bottom: 0.4rem;
+}
+
+.resource-card .description {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+}
+
+.resource-card .type-badge {
+    display: inline-block;
+    padding: 0.15rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.resource-card .btn-visit {
+    background: transparent;
+    color: #0a192f;
+    border: 1px solid #e2e8f0;
+    padding: 0.35rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+.resource-card .btn-visit:hover {
+    background: #0a192f;
+    color: #ffffff;
+    border-color: #0a192f;
+}
+
+.card-goal {
+    background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+    border-color: #86efac;
+    border-width: 2px;
+}
+
+.card-goal .roadmap-icon { stroke: #16a34a; }
+.card-goal h3 { color: #166534; }
+
+.footer {
+    background: #0a192f;
+    color: #94a3b8;
+    padding: 1.8rem 0;
+    margin-top: auto;
+    border-top: 1px solid #1e3a5f;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero { padding: 2.5rem 0 1.8rem 0; }
+    .resource-card { padding: 1.3rem; }
+    .roadmap-icon { width: 36px; height: 36px; }
+}
