@@ -1,13 +1,12 @@
-markdown
 # Nexus
 
-A personal learning dashboard for Data Science, Machine Learning, and beyond. Built with Vue.js, Bootstrap, and a focus on simplicity.
+My personal learning hub for Data Science, Machine Learning, and beyond. Built with Vue.js, Bootstrap, and the Insanely Simple philosophy.
 
 ---
 
 ## What
 
-A single place for the resources I'm actively using — courses, a book, and a blog. No clutter. No distractions. Just learning.
+One place for the resources I'm actually using right now — courses, a book, and a blog. No clutter. No distractions. Just learning.
 
 ---
 
@@ -35,25 +34,26 @@ A single place for the resources I'm actively using — courses, a book, and a b
 ## Principles
 
 - **Brutal** — No fluff. Direct.
-- **Small** — A handful of resources. Focused.
+- **Small** — Only a handful of resources. Focused.
 - **Minimal** — Whitespace. Clean.
-- **Iconic** — SVG icons. Visual.
+- **Iconic** — SVG line art. Visual.
 - **Phrasal** — Clear names. Memorable.
 - **Simple Stick** — Cut the noise.
 
 ---
 
-## Project Structure
+## Project structure
+
+```
 Nexus/
-├── index.html # Main page
+├── index.html      # Page markup + Vue mount point
 ├── css/
-│ └── style.css # Custom styles
+│   └── style.css   # All custom styling
 ├── js/
-│ └── app.js # Vue.js logic
+│   └── app.js       # Vue app: resource data + logic
 ├── README.md
 └── LICENSE
-
-text
+```
 
 ---
 
@@ -62,8 +62,13 @@ text
 ```bash
 git clone https://github.com/sagarrana125/Nexus-.git
 cd Nexus-
-# Open index.html in your browser
-No build step. No dependencies to install. Bootstrap and Vue load from CDN.
+# Open index.html in browser
+```
 
-Live Site
-https://sagarrana125.github.io/Nexus-/
+No build step, no dependencies to install — Bootstrap and Vue load from CDN.
+
+---
+
+## Live Site
+
+You can access it here: **[https://sagarrana125.github.io/Nexus-/](https://sagarrana125.github.io/Nexus-/)**
