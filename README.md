@@ -60,8 +60,8 @@ Nexus/
 ## Setup
 
 ```bash
-git clone https://github.com/sagarrana125/Nexus-.git
-cd Nexus-
+git clone https://github.com/sagarrana125/Nexus.git
+cd Nexus
 # Open index.html in browser
 ```
 
@@ -71,4 +71,4 @@ No build step, no dependencies to install — Bootstrap and Vue load from CDN.
 
 ## Live Site
 
-You can access it here: **[https://sagarrana125.github.io/Nexus-/](https://sagarrana125.github.io/Nexus-/)**
+You can access it here: **[https://sagarrana125.github.io/Nexus/](https://sagarrana125.github.io/Nexus/)**
