@@ -27,6 +27,8 @@ One place for the resources I'm actually using right now — courses, a book, an
 | Data Science | Chaicode Data Science | Course |
 | German Language | Short Stories in German | Book |
 | Open Source | Open Source Crash Course | Course |
+| System Commands | System Commands Reference | Notes |
+| DSA | Programming, Data Structures and Algorithms | Course |
 | Naval | Naval's Blog | Blog |
 
 ---
