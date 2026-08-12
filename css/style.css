@@ -1,156 +1,413 @@
-/* === INSANELY SIMPLE PRINCIPLES === */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* ==========================================================================
+   NEXUS — Design Tokens
+   A quiet, monochrome "learning zone." Silver-grey surfaces, a single
+   serif display face for identity, and restrained line icons.
+   ========================================================================== */
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #fafbfc;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #1a202c;
+:root {
+  /* --- Light (default) --- */
+  --bg: #fafafa;
+  --bg-soft: #f4f4f5;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --border-strong: #18181b;
+  --text: #18181b;
+  --text-muted: #71717a;
+  --text-faint: #a1a1aa;
+  --shadow: rgba(24, 24, 27, 0.06);
+
+  /* --- Type --- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* --- Rhythm --- */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --container: 1080px;
+  --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[data-theme="dark"] {
+  --bg: #121214;
+  --bg-soft: #18181b;
+  --surface: #1a1a1d;
+  --border: #2a2a2e;
+  --border-strong: #f4f4f5;
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --text-faint: #6b6b70;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition), color var(--transition);
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-strong);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.icon-btn:hover {
+  border-color: var(--border-strong);
+  transform: rotate(20deg);
+}
+
+.icon-btn svg { width: 18px; height: 18px; stroke: currentColor; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.back-link:hover { color: var(--text); }
+.back-link svg { width: 15px; height: 15px; stroke: currentColor; }
+
+/* ==========================================================================
+   HERO (part of <main>, but visually acts as the page intro)
+   ========================================================================== */
 .hero {
-    background: #0a192f;
-    padding: 3.5rem 0 2.5rem 0;
-    border-bottom: 3px solid #64ffda;
+  text-align: center;
+  padding: 5.5rem 0 3.5rem;
 }
 
 .hero h1 {
-    font-size: 3.8rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: #ffffff;
-    margin-bottom: 0.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
-
-.hero h1 span { color: #64ffda; }
 
 .hero .tagline {
-    font-size: 1.1rem;
-    color: #94a3b8;
-    font-weight: 300;
+  margin-top: 0.9rem;
+  font-size: 1.05rem;
+  color: var(--text-faint);
+  font-weight: 400;
 }
 
-.hero .badge-count {
-    background: rgba(100, 255, 218, 0.12);
-    color: #64ffda;
-    padding: 0.3rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    border: 1px solid rgba(100, 255, 218, 0.15);
+.hero-rule {
+  width: 42px;
+  height: 2px;
+  background: var(--text);
+  margin: 2rem auto 0;
 }
 
-.roadmap-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 0.8rem;
-    display: block;
-    stroke: #0a192f;
-    stroke-width: 1.8;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: all 0.3s ease;
+/* ==========================================================================
+   BODY / MAIN — Resources grid
+   ========================================================================== */
+.site-main { flex: 1 0 auto; }
+
+.section-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding-bottom: 2.25rem;
 }
 
-.resource-card:hover .roadmap-icon {
-    stroke: #64ffda;
-    transform: scale(1.05) rotate(-2deg);
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 980px) {
+  .resource-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .resource-grid { grid-template-columns: 1fr; }
 }
 
 .resource-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 1.8rem 1.5rem;
-    border: 1px solid #e2e8f0;
-    transition: all 0.25s ease;
-    height: 100%;
-    cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .resource-card:hover {
-    transform: translateY(-6px);
-    border-color: #64ffda;
-    box-shadow: 0 16px 32px rgba(10, 25, 47, 0.06);
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 14px 28px var(--shadow);
 }
 
-.resource-card .step-number {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #94a3b8;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.2rem;
+.icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  transition: border-color var(--transition);
+}
+
+.resource-card:hover .icon-box { border-color: var(--border-strong); }
+
+.icon-box svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text);
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.5rem;
 }
 
 .resource-card h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0a192f;
-    margin-bottom: 0.4rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.55rem;
 }
 
 .resource-card .description {
-    font-size: 0.85rem;
-    color: #475569;
-    line-height: 1.5;
-    margin-bottom: 0.8rem;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin-bottom: 1.4rem;
 }
 
-.resource-card .type-badge {
-    display: inline-block;
-    padding: 0.15rem 0.8rem;
-    border-radius: 50px;
-    font-size: 0.65rem;
-    font-weight: 600;
-    background: #f1f5f9;
-    color: #475569;
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
 }
 
-.resource-card .btn-visit {
-    background: transparent;
-    color: #0a192f;
-    border: 1px solid #e2e8f0;
-    padding: 0.35rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 0.3rem;
+.type-badge { color: var(--text-faint); font-weight: 500; }
+
+.visit-link {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap var(--transition);
 }
 
-.resource-card .btn-visit:hover {
-    background: #0a192f;
-    color: #ffffff;
-    border-color: #0a192f;
+.resource-card:hover .visit-link { gap: 0.5rem; }
+
+/* ==========================================================================
+   DETAIL PAGE (chaicode.html and similar sub-pages)
+   ========================================================================== */
+.detail-hero {
+  display: flex;
+  gap: 1.75rem;
+  align-items: flex-start;
+  padding: 2.5rem 0 3rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.card-goal {
-    border-width: 2px;
+.detail-hero .icon-box {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0;
+  flex-shrink: 0;
 }
 
-.card-goal:hover {
-    background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
-    border-color: #86efac;
+.detail-hero .icon-box svg { width: 32px; height: 32px; }
+
+.detail-hero h1 {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin: 0.35rem 0 0.7rem;
+  letter-spacing: -0.01em;
 }
 
-.card-goal:hover .roadmap-icon { stroke: #16a34a; }
-.card-goal:hover h3 { color: #166534; }
-
-.footer {
-    background: #0a192f;
-    color: #94a3b8;
-    padding: 1.8rem 0;
-    margin-top: auto;
-    border-top: 1px solid #1e3a5f;
-    text-align: center;
+.detail-hero p {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 46rem;
 }
 
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero { padding: 2.5rem 0 1.8rem 0; }
-    .resource-card { padding: 1.3rem; }
-    .roadmap-icon { width: 36px; height: 36px; }
+.links-section { padding: 3rem 0 5rem; }
+
+.links-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.links-section > .container > p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.75rem;
+}
+
+.link-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 0.85rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.link-row:hover { border-color: var(--border-strong); transform: translateX(3px); }
+
+.link-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-faint);
+  flex-shrink: 0;
+  transition: background var(--transition);
+}
+
+.link-row:hover .link-dot { background: var(--text); }
+
+.link-row .link-meta { flex-grow: 1; }
+
+.link-row .link-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+  margin-bottom: 0.15rem;
+}
+
+.link-row .link-url {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+.link-row .link-arrow {
+  width: 17px;
+  height: 17px;
+  stroke: var(--text);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.link-row:hover .link-arrow { transform: translateX(3px); }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.footer-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text);
+  margin: 0 auto 1.4rem;
+}
+
+.site-footer .copyright {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.site-footer .credit {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
 }
