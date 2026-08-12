@@ -59,6 +59,31 @@ const app = createApp({
                       <circle cx="24" cy="26" r="3.5" stroke="currentColor" stroke-width="1.8" fill="none"/>`
             },
             {
+                category: 'System Commands',
+                title: 'System Commands Reference',
+                description: 'A quick-reference notebook of essential system and terminal commands — handy for daily use, troubleshooting, and building command-line muscle memory.',
+                type: 'Notes',
+                url: 'https://rishi-2893.notion.site/System-Commands-3653481fd6ef4e7babe9cf223bd107bd',
+                isGoal: false,
+                svg: `<rect x="6" y="8" width="36" height="32" rx="3" />
+                      <path d="M12 18 L18 24 L12 30" stroke-width="2.2" />
+                      <path d="M22 30 L32 30" stroke-width="2.2" />`
+            },
+            {
+                category: 'DSA',
+                title: 'Programming, Data Structures and Algorithms',
+                description: 'A structured course covering programming fundamentals, core data structures, and algorithms — the essential toolkit for problem solving and interviews.',
+                type: 'Course',
+                url: 'https://pdsaiitm.github.io/',
+                isGoal: false,
+                svg: `<circle cx="24" cy="10" r="4.5" />
+                      <circle cx="10" cy="34" r="4.5" />
+                      <circle cx="38" cy="34" r="4.5" />
+                      <path d="M21.5 13.5 L12 30" />
+                      <path d="M26.5 13.5 L36 30" />
+                      <path d="M14.5 34 L33.5 34" />`
+            },
+            {
                 category: 'Naval',
                 title: "Naval's Blog",
                 description: "Naval Ravikant's philosophical takes on wealth, happiness, and life — curated wisdom from one of tech's sharpest minds. Read, reflect, and grow.",
