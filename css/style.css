@@ -128,13 +128,16 @@ body {
 }
 
 .card-goal {
-    background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
-    border-color: #86efac;
     border-width: 2px;
 }
 
-.card-goal .roadmap-icon { stroke: #16a34a; }
-.card-goal h3 { color: #166534; }
+.card-goal:hover {
+    background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+    border-color: #86efac;
+}
+
+.card-goal:hover .roadmap-icon { stroke: #16a34a; }
+.card-goal:hover h3 { color: #166534; }
 
 .footer {
     background: #0a192f;
